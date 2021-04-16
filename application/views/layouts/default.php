@@ -105,6 +105,14 @@
                                     <span class="pcoded-mtext">Micro hábitos</span>
                                   </a>
                               </li>
+							  <li class="">
+                                  <a href="<?=site_url('Categoria')?>" class="waves-effect waves-dark">
+                                    <span class="pcoded-micon">
+                                      <i class="fa fa-address-card"></i>
+                                    </span>
+                                    <span class="pcoded-mtext">Categorias</span>
+                                  </a>
+                              </li>
                           </ul>
 
                           <div class="pcoded-navigation-label">Reportes</div>
@@ -114,7 +122,7 @@
                                     <span class="pcoded-micon">
                                       <i class="fa fa-tasks"></i>
                                     </span>
-                                    <span class="pcoded-mtext">Reporte de Encuestas</span>
+                                    <span class="pcoded-mtext">Reporte</span>
                                   </a>
                               </li>
                           </ul>
@@ -276,4 +284,3 @@
 </html>
 
 
-  

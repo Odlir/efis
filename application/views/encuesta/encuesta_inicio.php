@@ -94,6 +94,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														<input type="text" class="form-control" name="nombre_encuesta" id="nombre_encuesta" placeholder="Ingresar nombre del micro hábito">
 													</div>
 												</div>
+
+												<div class="form-group row">
+													<label class="col-sm-3 col-form-label">Categoria</label>
+													<div class="col-sm-9">
+														<select class="form-control" name="categoria" id="categoria">
+															<option value="">- Seleccionar -</option>
+															<?php foreach ($comboCategoria as $d) { ?>
+																<option value="<?php echo $d->categoria_id; ?>"><?php echo $d->categoria_nombre; ?></option>
+															<?php }?>
+														</select>
+													</div>
+												</div>
 												
 												<div class="form-group row" style="display:none;">
 													<label class="col-sm-3 col-form-label">Tiempo alerta (Horas)</label>
@@ -223,7 +235,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 														<select class="form-control" name="tipo_pregunta" id="tipo_pregunta">
 															<option value="">- Seleccionar -</option>
 															<?php foreach ($comboRespuesta as $d) { ?>
-																<option value="<?php echo $d->valor; ?>"><?php echo $d->texto; ?></option>
+																<option value="<?php echo $d->valor; ?>" <?php echo $d->valor=='2'?'selected="selected"':''; ?>><?php echo $d->texto; ?></option>
 															<?php }?>
 														</select>
 													</div>

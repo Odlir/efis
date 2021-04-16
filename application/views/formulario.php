@@ -114,6 +114,8 @@
                                                             if ($oPregunta->encuesta_pregunta_tipo_str == "RadioButton"){
                                                             ?>
                                                                     <div class="form-radio">
+																		<p class="font-weight-bold">Selecciona con que frecuencia lograste alcanzar tu micro hábito</p>
+																		<p>donde 1 no cumpliste el micro hábito y 5 lograste cumplir todo el micro hábito</p>
                                                             <?php foreach ($oPregunta->respuestas as $oRespuestas){ ?>
                                                                         <div class="radio radiofill radio-inline">
                                                                             <label>
@@ -309,4 +311,3 @@
 </html>
 
 
-  

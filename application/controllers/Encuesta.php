@@ -11,6 +11,7 @@ class Encuesta extends CI_Controller {
 		$this->load->Library('Layouts');
 		$this->load->model('EncuestaModel');
 		$this->load->model('MaestroModel');
+		$this->load->model('CategoriaModel');
 		$this->load->library('pagination');
 		/*if(!is_logged_in())
 		{
@@ -22,11 +23,14 @@ class Encuesta extends CI_Controller {
 	{
 		$encuesta = new EncuestaModel;
 		$maestro = new MaestroModel;
+		$categoria = new CategoriaModel;
+
 		$data['data'] = $encuesta->get_encuestas();
 
 		$data['comboRespuesta'] = $maestro->get_Tipo_Respuesta();
 		$data['comboProgramacion'] = $maestro->get_Tipo_Programacion();
 		$data['comboGrupo'] = $maestro->get_Grupos_Activos(true);
+		$data['comboCategoria'] = $categoria->get_grupos();
 		
 		$this->layouts->set_title('Micro hábitos');
 		$this->layouts->set_module_name('Mantenimiento de micro hábitos');
@@ -72,7 +76,8 @@ class Encuesta extends CI_Controller {
 			'encuesta_fecha_inicio_alerta' => $input_data["encuesta"]["fechaInicio"],
 			'encuesta_fecha_fin_alerta' => $input_data["encuesta"]["fechaFin"],
 			'encuesta_tipo_alerta_id' => $tipo_alerta,
-			'encuesta_json_dias_alerta' => json_encode($input_data["encuesta"]["jsonDiasProgramacion"])
+			'encuesta_json_dias_alerta' => json_encode($input_data["encuesta"]["jsonDiasProgramacion"]),
+			'categoria_id' => $input_data["encuesta"]["categoria"]
 		);
 
 		$iEncuestaID = $input_data["encuesta"]["idEncuesta"];
@@ -270,7 +275,7 @@ class Encuesta extends CI_Controller {
 			$client = new Twilio\Rest\Client($sid, $token);
 			
 			$from = $this->config->item('twilio_from');
-			$mensaje = "Estimado ".$nombre.", tienes una encuesta pendiente.";
+			$mensaje = "Estimado(a) ".$nombre.", tienes una micro habito pendiente.";
 
 			$celular = "+51".$celular;
 			

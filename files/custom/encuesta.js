@@ -218,7 +218,8 @@ $(document).ready(function() {
         setSwitchery(switcheryEncuesta, true);
 
         $('#nombre_pregunta').val('');
-        $('#tipo_pregunta').val('');
+        $('#tipo_pregunta').val('2');
+        $('#tipo_notifi').val('1');
         setSwitchery(switcheryPregunta, true);
         $('.btnAddPregunta').show();
         $('.btnGuardarPregunta').hide();
@@ -311,6 +312,7 @@ $(document).ready(function() {
 
         var dCabecera = {
             'idEncuesta': $("#idEncuesta").val(),
+            'categoria': $("#categoria").val(),
             'nombreEncuesta': $("#nombre_encuesta").val(),
             'alertaHoras': 0,
             'estadoEncuesta': elemsmallEncuesta.checked ? 2 : 1,
@@ -328,8 +330,6 @@ $(document).ready(function() {
             'grupo': dGrupos,
             'insert': valor_insert
         }
-
-        console.log('json', JSON.stringify(dataForm));
         
         $.ajax({
             url: $("#urlEncuestaForm").val(),

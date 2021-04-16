@@ -105,7 +105,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <!-- Authentication card start -->
                     <form class="md-float-material form-material" method="post" action="<?=site_url('login/validation')?>">
                         <div class="text-center">
-                            <img height="123" width="300" src="<?php echo base_url('files/assets/images/logo_effectus.png'); ?>" alt="logo_effectus.png">
+                            <img height="123" width="220" src="<?php echo base_url('files/assets/images/logo_effectus.png'); ?>" alt="logo_effectus.png">
                         </div>
                         <div class="auth-box card">
                             <div class="card-block">

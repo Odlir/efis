@@ -127,7 +127,7 @@ class EncuestaModel extends CI_Model{
     public function encuesta_insertar($data){
         
         $this->db->set('encuesta_fecha_creacion', 'NOW()', FALSE);
-        $this->db->insert('Encuesta', $data);
+        $this->db->insert('encuesta', $data);
         $insert_id = $this->db->insert_id();
         return $insert_id;
     }
